@@ -9,7 +9,7 @@ var prefix = "https://cors-anywhere.herokuapp.com/";
 
 //funkcja pobierająca cytaty
 function getQuote() {
-    fetch(quoteUrl, { cache: "no-store" })//adres zapytania (link do api), wyłączamy możliwość zaglądani do HTTP Cache (aby każdorazwowo było wysyłane zapytanie)
+    fetch(prefix + quoteUrl, { cache: "no-store" })//adres zapytania (link do api), wyłączamy możliwość zaglądani do HTTP Cache (aby każdorazwowo było wysyłane zapytanie)
         .then(function(resp) {
             return resp.json();
         })

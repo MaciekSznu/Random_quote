@@ -4,10 +4,12 @@
 var tweetLink = "https://twitter.com/intent/tweet?text=";
 //link do API z cytatami
 var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+// prefix rozwiązujący problem CORS
+var prefix = "https://cors-anywhere.herokuapp.com/";
 
 //funkcja pobierająca cytaty
 function getQuote() {
-    fetch(quoteUrl, { cache: "no-store" })//adres zapytania (link do api), wyłączamy możliwość zaglądani do HTTP Cache (aby każdorazwowo było wysyłane zapytanie)
+    fetch(prefix + quoteUrl, { cache: "no-store" })//adres zapytania (link do api), wyłączamy możliwość zaglądani do HTTP Cache (aby każdorazwowo było wysyłane zapytanie)
         .then(function(resp) {
             return resp.json();
         })

@@ -12,8 +12,8 @@ function getQuote() {
     fetch(prefix + quoteUrl, { cache: "no-store" })//adres zapytania (link do api), wyłączamy możliwość zaglądani do HTTP Cache (aby każdorazwowo było wysyłane zapytanie)
         .then(function(resp) {
             return resp.json();
-        })
-        .then(createTweet);//funkcja tworząca tweet wykonywana po prawidłowym wykonaniu zapytania do API
+        });
+        //.then(createTweet);//funkcja tworząca tweet wykonywana po prawidłowym wykonaniu zapytania do API
 }
 
 //funkcja tworząca tweeta

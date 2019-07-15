@@ -32,7 +32,8 @@ function createTweet(input) {
 
     if (tweetText.length > 140) {
         getQuote();
-    } else {
+    } 
+    else {
         var tweet = tweetLink + encodeURIComponent(tweetText);
         document.querySelector('.quote').innerText = quoteText;
         document.querySelector('.author').innerText = "Author: " + quoteAuthor;
